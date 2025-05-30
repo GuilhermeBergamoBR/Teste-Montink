@@ -1,13 +1,13 @@
 const ProductImageGallery = ({ currentImage, setCurrentImage, miniatures = [] }) => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="flex flex-col">
       <img
         src={currentImage}
         alt="Produto principal"
-        className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl rounded-lg shadow-lg mb-4 object-contain"
+        className="w-full sm:w-[60vw] md:w-[50vw] lg:w-[28vw] xl:w-[25vw] rounded-lg shadow-lg mb-4 object-contain"
       />
 
-      <div className="flex flex-wrap justify-center gap-2 mt-2">
+      <div className="flex flex-wrap gap-2 mt-2">
         {miniatures.map((miniature, index) => (
           <button
             key={index}
@@ -17,13 +17,13 @@ const ProductImageGallery = ({ currentImage, setCurrentImage, miniatures = [] })
             <img
               src={miniature}
               alt={`Miniatura ${index}`}
-              className="w-16 sm:w-20 md:w-24 lg:w-28 rounded-lg shadow-md object-cover"
+              className="w-16 sm:w-20 md:w-20 lg:w-16 xl:w-20 rounded-md shadow object-cover"
             />
           </button>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductImageGallery;
+export default ProductImageGallery
