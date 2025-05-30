@@ -1,5 +1,3 @@
-import InputMask from 'react-input-mask'
-
 const ZipCodeInput = ({ zipCode, onChange, zipCodeError, ...props }) => {
 
   const formatCep = (val) => {
