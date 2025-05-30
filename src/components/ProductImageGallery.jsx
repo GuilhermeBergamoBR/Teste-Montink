@@ -4,7 +4,7 @@ const ProductImageGallery = ({ currentImage, setCurrentImage, miniatures = [] })
       <img
         src={currentImage}
         alt="Produto principal"
-        className="w-[35vw] rounded-lg shadow-lg mb-2"
+        className="w-[20vw] rounded-lg shadow-lg mb-2"
       />
       <div className="flex gap-2 mt-4">
         {miniatures.map((miniature, index) => (
