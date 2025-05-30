@@ -1,8 +1,9 @@
-const ProductVariants = ({ variants, selectedOptions, onSelect }) => {
+const ProductVariants = ({ variants, selectedOptions = {}, onSelect }) => {
+
   return (
     <>
       {variants.map(variant => (
-        <div key={variant.name} className="flex flex-col flex-wrap mt-2">
+        <div key={variant.name + selectedOptions[variant.name]} className="flex flex-col flex-wrap mt-2">
           <p className="text-left font-semibold text-gray-700">
             {variant.name}: {selectedOptions[variant.name] || ''}
           </p>

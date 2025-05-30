@@ -1,23 +1,24 @@
 const ProductImageGallery = ({ currentImage, setCurrentImage, miniatures = [] }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-xl w-full">
       <img
         src={currentImage}
         alt="Produto principal"
-        className="w-full sm:w-[60vw] md:w-[50vw] lg:w-[28vw] xl:w-[25vw] rounded-lg shadow-lg mb-4 object-contain"
+        className="w-full max-w-full rounded-lg shadow-lg mb-4 object-contain"
+        style={{ maxHeight: '400px' }}
       />
-
-      <div className="flex flex-wrap gap-2 mt-2">
+      
+      <div className="flex gap-2 overflow-x-auto no-scrollbar">
         {miniatures.map((miniature, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(miniature)}
-            className="focus:outline-none"
+            className="flex-shrink-0 focus:outline-none"
           >
             <img
               src={miniature}
               alt={`Miniatura ${index}`}
-              className="w-16 sm:w-20 md:w-20 lg:w-16 xl:w-20 rounded-md shadow object-cover"
+              className="w-16 h-16 rounded-md shadow object-cover"
             />
           </button>
         ))}
