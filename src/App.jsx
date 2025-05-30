@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   const defaultImage = '/camisa-verde1.webp'
-  const [currentImage, setCurrentImage] = useState(defaultImage)
+  const [currentImage, setCurrentImage] = useState()
   const [selectedOptions, setSelectedOptions] = useState({Cor: 'Verde'})
   const [zipCode, setZipCode] = useState('')
   const [zipCodeError, setZipCodeError] = useState(false)
@@ -74,7 +74,7 @@ function App() {
 console.log('Miniaturas renderizadas:', miniatures.find(m => m.color === selectedOptions['Cor'])?.pictures)
 
   return (
-    <div className="flex items-center gap-6 rounded-md bg-white p-4 shadow-lg">
+    <div className="flex flex-wrap items-center gap-6 rounded-md bg-white p-4 shadow-lg">
       <ProductImageGallery
         miniatures={miniatures.find(m => m.color === selectedOptions['Cor'])?.pictures || []}
         currentImage={currentImage}
