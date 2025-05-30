@@ -38,8 +38,8 @@ function App() {
       const colorPics = miniatures.find(m => m.color === savedOptions.Cor)?.pictures
       setCurrentImage(colorPics ? colorPics[0] : defaultImage)
     } else {
-      // Caso não tenha salvo, garante que tem imagem padrão
       setCurrentImage(defaultImage)
+      setSelectedOptions({Cor: 'Verde'})
     }
   }, [])
 
